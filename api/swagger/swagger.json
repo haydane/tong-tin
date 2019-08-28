@@ -1,0 +1,60 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "Tong Tin",
+		"description": "Tong Tin API"
+	},
+	"host": "192.168.123.12:82",
+	"basePath": "/api",
+	"tags": [
+		{
+			"name": "details",
+			"description": "Operations about Tong Tin"
+		}
+	],
+	"schemes": ["http", "https"],
+	"paths": {
+		"/details": {
+			"post": {
+				"tags": ["details"],
+				"summary": "Show Tong Tin Details",
+				"description": "",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"type": "object",
+							"properties": {
+								"person": {
+									"type": "number",
+									"format": "int64"
+								},
+								"head": {
+									"type": "number",
+									"format": "int64"
+								},
+								"startDate": {
+									"type": "string",
+									"format": "date"
+								}
+							}
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation"
+					},
+					"400": {
+						"description": "invalid input variables"
+					}
+				}
+			}
+        }
+    }
+}

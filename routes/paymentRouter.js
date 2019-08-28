@@ -4,10 +4,7 @@ const router = express.Router();
 
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 weekday = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-router.get('/',(req,res) => {
-    res.send('hello');
-});
-router.get('/details',(req,res) => {
+router.post('/details',(req,res) => {
     let {person = 12, head=200, startDate= new Date() } = req.body;
     arr = [];
     start = new Date(startDate);
